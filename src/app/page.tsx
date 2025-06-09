@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import ProjectCard from "@/components/ProjectCard";
 
 export default function Home() {
   return (
@@ -19,6 +20,22 @@ export default function Home() {
           >
             Lihat Proyek Saya
           </a>
+        </section>
+        <section id="projects" className="mt-32 px-4 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Project Saya</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            <ProjectCard
+              title="Aplikasi Todo List"
+              description="Aplikasi sederhana untuk manajemen tugas harian dengan React dan localStorage."
+              github="https://github.com/username/todo-app"
+              demo="https://todo.dwisa.dev"
+            />
+            <ProjectCard
+              title="Website UKM Kampus"
+              description="Website statis untuk unit kegiatan mahasiswa, dibangun dengan HTML, Tailwind, dan Netlify."
+              github="https://github.com/username/ukm-site"
+            />
+          </div>
         </section>
       </main>
     </>
