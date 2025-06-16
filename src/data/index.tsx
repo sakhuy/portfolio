@@ -36,8 +36,8 @@ export const contacts: Contact[] = [
   {
     icon: Mail,
     label: "Email",
-    value: "dwisasakha244@email.com",
-    href: "mailto:dwisasakha244@email.com",
+    value: "dwisakha244@email.com",
+    href: "mailto:dwisakha244@email.com",
     color: "hover:text-red-600",
     ariaLabel: "Hubungi saya melalui Email",
   },
@@ -61,7 +61,7 @@ export const contacts: Contact[] = [
     icon: Instagram,
     label: "Instagram",
     value: "@sakhuy_", // Ganti dengan handle Instagram Anda
-    href: "https://instagram.com/sakhuy_", // Ganti dengan link Instagram Anda
+    href: "https://instagram.com/rdsakhaaa", // Ganti dengan link Instagram Anda
     color: "hover:text-purple-600",
     ariaLabel: "Lihat profil Instagram saya",
   },
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     tech: ["Python", "scikit-learn", "pandas", "XGBoost", "Matplotlib"],
     links: [
       {
-        name: "Presentasi",
+        name: "Presentation",
         url: "https://www.canva.com/design/DAGo0pzKY4w/SqcdWRDdQf07Q8w1l6_Mmw/view?utm_content=DAGo0pzKY4w&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he54bdee237#4",
         iconName: "Presentation", 
       },
@@ -102,11 +102,7 @@ export const projects: Project[] = [
     description: "Designed and built a modular healthcare information system using a microservices architecture. Integrated six independent services, including authentication, pharmacy, and billing.",
     tech: ["Java", "Spring Boot", "Microservices", "Docker", "PostgreSQL", "Git"],
     links: [
-      {
-        name: "GitHub",
-        url: "https://github.com/sakhuy", 
-        iconName: "Github",
-      },
+      
     ]
   },
 ];
