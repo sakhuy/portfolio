@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --red-primary: #dc143c;
+  --red-light: #fef2f2;
+  --red-dark: #b91c1c;
 }
 
 @theme inline {
@@ -10,6 +13,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-red-primary: var(--red-primary);
+  --color-red-light: var(--red-light);
+  --color-red-dark: var(--red-dark);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +29,71 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Subtle animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 0.8s ease-out 0.2s both;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+/* Custom red colors */
+.bg-red-primary {
+  background-color: var(--red-primary);
+}
+
+.text-red-primary {
+  color: var(--red-primary);
+}
+
+.border-red-primary {
+  border-color: var(--red-primary);
+}
+
+.hover\:bg-red-primary:hover {
+  background-color: var(--red-primary);
+}
+
+.hover\:text-red-primary:hover {
+  color: var(--red-primary);
+}
+
+.hover\:border-red-primary:hover {
+  border-color: var(--red-primary);
 }
