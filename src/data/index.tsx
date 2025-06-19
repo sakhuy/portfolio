@@ -2,6 +2,9 @@
 
 import { Mail, Github, Linkedin, Instagram} from "lucide-react";
 import { IconName } from "@/components/ui/project-card";
+import { FaReact, FaJava, FaDocker, FaGitAlt } from "react-icons/fa";
+import { SiNextdotjs, SiTailwindcss, SiVuedotjs, SiSpringboot, SiPostgresql, SiPython } from "react-icons/si";
+
 
 // Tipe data untuk kontak (opsional, tapi praktik yang baik)
 export type Contact = {
@@ -25,6 +28,16 @@ export type Project = {
   }[];
 };
 
+// Tipe data untuk tech stack
+export type TechSkill = {
+  name: string
+  icon: React.ReactNode
+}
+
+export type TechCategory = {
+  category: string
+  skills: TechSkill[]
+}
 
 export const navItems = [
   { href: "#home", label: "Home" },
@@ -118,3 +131,31 @@ export const projects: Project[] = [
     ],
   },
 ];
+
+export const techStack: TechCategory[] = [
+  {
+    category: "Frontend",
+    skills: [
+      { name: "React", icon: <FaReact className="text-blue-500" /> },
+      { name: "Next.js", icon: <SiNextdotjs className="text-gray-900" /> },
+      { name: "Vue.js", icon: <SiVuedotjs className="text-green-500" /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-500" /> },
+    ],
+  },
+  {
+    category: "Backend",
+    skills: [
+      { name: "Java", icon: <FaJava className="text-orange-500" /> },
+      { name: "Spring Boot", icon: <SiSpringboot className="text-green-600" /> },
+      { name: "Python", icon: <SiPython className="text-yellow-500" /> },
+    ],
+  },
+  {
+    category: "Database & Tools",
+    skills: [
+      { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-600" /> },
+      { name: "Docker", icon: <FaDocker className="text-blue-500" /> },
+      { name: "Git", icon: <FaGitAlt className="text-orange-600" /> },
+    ],
+  },
+]
