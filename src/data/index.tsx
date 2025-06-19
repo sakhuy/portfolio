@@ -105,4 +105,16 @@ export const projects: Project[] = [
       
     ]
   },
+  {
+    title: "AVATAR - Visa Application Mobile App", 
+    description: "Contributed to the design of a user-friendly mobile app for visa applications. Involved in user research, wireframing, and usability testing, achieving a high SUS score of 90.5.",
+    tech: ["Figma", "User Research", "Usability Testing"],
+    links: [
+      {
+        name: "Presentation",
+        url: "https://www.canva.com/design/DAGGyFLaubM/e8RvyO4hx6O_F6daGayDgA/view?utm_content=DAGGyFLaubM&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h8ebb2897c6",
+        iconName: "Presentation", 
+      },
+    ],
+  },
 ];
