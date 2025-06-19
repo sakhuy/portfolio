@@ -1,8 +1,45 @@
-import { techStack } from "@/data"
+"use client";
+
+// Impor 'dynamic' dari Next.js
+import dynamic from 'next/dynamic';
+import { techStack } from "@/data";
+
+// Lakukan dynamic import untuk komponen Slider
+// Opsi { ssr: false } sangat penting untuk mencegah error rendering di server
+const Slider = dynamic(() => import("react-slick"), { ssr: false });
 
 export default function TechStackSection() {
+  // Pengaturan untuk carousel (tidak ada yang berubah di sini)
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  // Sisa kode komponen sama persis
   return (
-    <section id="tech-stack" className="w-full py-24 px-4 bg-white">
+    <section id="tech-stack" className="w-full py-24 px-4 bg-white overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">Tech Stack</h2>
@@ -11,35 +48,30 @@ export default function TechStackSection() {
         </div>
 
         <div className="space-y-16 animate-fade-in-up delay-200">
-          {techStack.map((group, groupIndex) => (
-            <div key={group.category} className="animate-fade-in-up" style={{ animationDelay: `${groupIndex * 0.1}s` }}>
+          {techStack.map((group) => (
+            <div key={group.category}>
               <h3 className="text-2xl font-semibold text-center mb-8 text-gray-800">{group.category}</h3>
-              <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-12">
-                {group.skills.map((skill, skillIndex) => (
-                  <div
-                    key={skill.name}
-                    className="group cursor-pointer"
-                    style={{ animationDelay: `${(groupIndex * group.skills.length + skillIndex) * 0.1}s` }}
-                  >
-                    <div className="flex flex-col items-center gap-3 p-4 rounded-lg transition-all duration-300 hover:bg-red-50 hover:shadow-lg hover:scale-105">
-                      <div className="text-5xl sm:text-6xl transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-lg">
-                        {skill.icon}
+              
+              <Slider {...settings}>
+                {group.skills.map((skill) => (
+                  <div key={skill.name} className="px-4">
+                    <div className="group cursor-pointer">
+                      <div className="flex flex-col items-center gap-3 p-4 rounded-lg transition-all duration-300 hover:bg-red-50 hover:shadow-lg hover:scale-105 h-40 justify-center">
+                        <div className="text-5xl sm:text-6xl transition-all duration-300 group-hover:scale-110 group-hover:drop-shadow-lg">
+                          {skill.icon}
+                        </div>
+                        <span className="font-medium text-gray-600 text-sm sm:text-base transition-all duration-300 group-hover:text-red-700 group-hover:font-semibold">
+                          {skill.name}
+                        </span>
                       </div>
-                      <span className="font-medium text-gray-600 text-sm sm:text-base transition-all duration-300 group-hover:text-red-primary group-hover:font-semibold">
-                        {skill.name}
-                      </span>
                     </div>
                   </div>
                 ))}
-              </div>
+              </Slider>
             </div>
           ))}
         </div>
-
-        {/* Decorative elements */}
-        <div className="absolute top-20 right-20 w-32 h-32 bg-red-50 rounded-full opacity-20 blur-2xl pointer-events-none"></div>
-        <div className="absolute bottom-20 left-20 w-24 h-24 bg-red-50 rounded-full opacity-15 blur-xl pointer-events-none"></div>
       </div>
     </section>
-  )
+  );
 }
