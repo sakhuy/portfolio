@@ -42,7 +42,7 @@ export default function HeroSection() {
               <ArrowDown className="inline-block ml-2 w-4 h-4 group-hover:translate-y-1 transition-transform duration-300" />
             </a>
             <a
-              href="/CV - Rayhan Dwi Sakha.pdf"
+              href="/cv - Rayhan Dwi Sakha.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center bg-white border-2 border-gray-200 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-red-primary hover:text-red-primary transition-all duration-300 transform hover:-translate-y-1"
