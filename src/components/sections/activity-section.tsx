@@ -243,7 +243,6 @@ export default function ActivitySection() {
             currentActivities.map((activity, index) => (
               <a
                 key={activity.id}
-                href={`https://www.strava.com/activities/${activity.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group bg-white rounded-lg p-6 shadow-sm border border-gray-100 hover:shadow-lg hover:border-red-200 transition-all duration-300 transform hover:-translate-y-1"
